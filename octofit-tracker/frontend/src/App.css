@@ -1,4 +1,156 @@
+/* ── OctoFit Tracker – Global Styles ── */
+
+/* Palette */
+:root {
+  --octo-primary: #2c6bed;
+  --octo-primary-dark: #1b4fba;
+  --octo-accent: #00c2a8;
+  --octo-bg: #f0f4f8;
+  --octo-navbar: #1a1a2e;
+  --octo-card-bg: #ffffff;
+  --octo-text: #2d3748;
+  --octo-muted: #718096;
+  --octo-footer-bg: #1a1a2e;
+}
+
+/* Body */
+body {
+  background-color: var(--octo-bg);
+  color: var(--octo-text);
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+/* Navbar */
+.octofit-navbar {
+  background: linear-gradient(135deg, var(--octo-navbar) 0%, #16213e 100%) !important;
+}
+.octofit-navbar .nav-link {
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.octofit-navbar .nav-link:hover,
+.octofit-navbar .nav-link.active {
+  color: var(--octo-accent) !important;
+}
+.octofit-navbar .navbar-brand {
+  color: #fff !important;
+  font-weight: 700;
+}
+
+/* Logo */
 .octofit-logo {
   width: 120px;
   height: auto;
+}
+.octofit-hero-logo {
+  width: 160px;
+  height: auto;
+  filter: drop-shadow(0 4px 12px rgba(44, 107, 237, 0.3));
+}
+
+/* Main content */
+.octofit-main {
+  min-height: calc(100vh - 120px);
+}
+
+/* Cards */
+.card {
+  border-radius: 12px;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1) !important;
+}
+.home-card {
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+.home-card:hover {
+  border-color: var(--octo-accent);
+}
+.card-header.bg-dark {
+  background: linear-gradient(135deg, var(--octo-navbar), #16213e) !important;
+  border-radius: 12px 12px 0 0 !important;
+}
+
+/* Tables */
+.table-dark {
+  background-color: var(--octo-navbar) !important;
+}
+.table-dark th {
+  color: var(--octo-accent);
+  font-weight: 600;
+  border-bottom-color: rgba(0, 194, 168, 0.3);
+}
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+  background-color: rgba(44, 107, 237, 0.04);
+}
+.table-hover > tbody > tr:hover > * {
+  background-color: rgba(0, 194, 168, 0.08);
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--octo-primary);
+  border-color: var(--octo-primary);
+}
+.btn-primary:hover {
+  background-color: var(--octo-primary-dark);
+  border-color: var(--octo-primary-dark);
+}
+
+/* Badges */
+.badge.bg-secondary {
+  background-color: var(--octo-muted) !important;
+  font-weight: 500;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--octo-text);
+}
+.text-primary {
+  color: var(--octo-primary) !important;
+}
+
+/* Links */
+a {
+  color: var(--octo-primary);
+}
+a:hover {
+  color: var(--octo-primary-dark);
+}
+
+/* Footer */
+.octofit-footer {
+  background-color: var(--octo-footer-bg);
+  color: rgba(255, 255, 255, 0.6);
+}
+.octofit-footer small {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* Alerts */
+.alert-info {
+  background-color: rgba(44, 107, 237, 0.1);
+  border-color: rgba(44, 107, 237, 0.2);
+  color: var(--octo-primary-dark);
+}
+.alert-danger {
+  background-color: rgba(229, 62, 62, 0.1);
+  border-color: rgba(229, 62, 62, 0.2);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--octo-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--octo-muted);
+  border-radius: 4px;
 }
