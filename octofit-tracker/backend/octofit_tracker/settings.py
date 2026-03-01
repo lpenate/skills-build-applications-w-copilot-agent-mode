@@ -1,3 +1,5 @@
+# Modelo de usuario personalizado
+AUTH_USER_MODEL = 'users.OctoUser'
 """
 Django settings for octofit_tracker project.
 
