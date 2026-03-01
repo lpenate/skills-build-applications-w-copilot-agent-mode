@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 
-const API_BASE = process.env.REACT_APP_API_BASE_URL ||
-  (window.location.hostname.includes('app.github.dev')
-    ? `${window.location.protocol}//${window.location.hostname.replace('-3000', '-8000')}/api`
-    : 'http://127.0.0.1:8000/api');
+const codespace_name = process.env.REACT_APP_CODESPACE_NAME;
+const API_URL = codespace_name
+  ? `https://${codespace_name}-8000.app.github.dev/api/leaderboard/`
+  : 'http://localhost:8000/api/leaderboard/';
 
 function Leaderboard() {
   const [entries, setEntries] = useState([]);
@@ -11,7 +11,7 @@ function Leaderboard() {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    const url = `${API_BASE}/leaderboard/`;
+    const url = API_URL;
     console.log('Fetching leaderboard from:', url);
 
     fetch(url)
