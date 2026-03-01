@@ -3,7 +3,7 @@ from django.db import models
 
 
 class WorkoutSuggestion(models.Model):
-	user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='workout_suggestions')
+	user = models.ForeignKey('users.OctoUser', on_delete=models.CASCADE, related_name='workout_suggestions')
 	title = models.CharField(max_length=150)
 	description = models.TextField()
 	difficulty = models.CharField(max_length=50, default='beginner')

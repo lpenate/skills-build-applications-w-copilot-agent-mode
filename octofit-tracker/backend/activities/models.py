@@ -3,7 +3,7 @@ from django.db import models
 
 
 class Activity(models.Model):
-	user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='activities')
+	user = models.ForeignKey('users.OctoUser', on_delete=models.CASCADE, related_name='activities')
 	activity_type = models.CharField(max_length=100)
 	duration_minutes = models.PositiveIntegerField()
 	calories_burned = models.PositiveIntegerField(default=0)
